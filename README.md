@@ -21,7 +21,7 @@ Este projeto implementa uma empilhadeira automatizada utilizando um ESP32, senso
 
   O código está dividido em duas:
 
-- Monitoramento e Alerta: Realiza a leitura dos dados do sensor ultrassônico, verifica a distância dos obstáculos e aciona buzzer e LEDs para alertar. Os dados são enviados em formato JSON para comunicação MQTT.
+- Monitoramento e Alerta: Realiza a leitura dos dados do sensor ultrassônico, verifica a distância dos obstáculos e aciona buzzer e LEDs para alertar. Os dados são enviados para comunicação MQTT.
 
 - Comunicação MQTT: Utiliza a conectividade Wi-Fi do ESP32 para conectar-se a uma rede e enviar os dados coletados para um servidor MQTT. Este segmento também é responsável por receber e processar comandos e dados enviados de volta ao dispositivo.
 
@@ -32,7 +32,7 @@ Inicialização e configuração do hardware.
 
 - Verificação da distância e acionamento dos alertas.
 
-- Envio de dados via JSON e MQTT para processamento ou monitoramento remoto.
+- Envio de dados e MQTT para processamento ou monitoramento remoto.
 
 - Monitoramento de conexão com o servidor MQTT e reconexão automática, se necessário.
 
@@ -52,9 +52,7 @@ O sensor ultrassônico é conectado ao ESP32 para controlar a coleta e processam
 -  **Porta:** 1883
 - **Tópicos:**
 - `esp32/status`: Publicação de alertas e status do sistema.
-- `esp32/atuador`: Recebimento de comandos para atuadores.
 
 ## Módulos de Comunicação
 - **WiFi.h:** Biblioteca para conexão Wi-Fi.
 - **PubSubClient.h:** Biblioteca para comunicação MQTT.
-- **NewPing.h:** Biblioteca para controle do sensor ultrassônico.
